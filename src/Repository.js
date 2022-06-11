@@ -5,6 +5,7 @@ import RepoIcon from "./svgs/RepoIcon";
 import StarIcon from "./svgs/StarIcon";
 import ForkIcon from "./svgs/ForkIcon";
 import { numberFormatter } from "./helper/formatNumber";
+import Loading from "./components/Loading";
 
 const Repository = ({
   username,
@@ -20,8 +21,8 @@ const Repository = ({
     variables: { username, repository },
   });
 
-  if (loading) return "Loading...";
-  if (error) return <pre>{error.message}</pre>;
+  if (loading) return <Loading />;
+  if (error) return <Loading />;
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
@@ -39,7 +40,7 @@ const Repository = ({
 
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
-      <div className="flex justify-between flex-col rounded-md p-4 max-w-xs w-full border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark">
+      <div className="flex justify-between flex-col rounded-md p-4 w-80 h-44 border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark">
         <div>
           <div className="flex items-center gap-2">
             <RepoIcon theme={theme} />

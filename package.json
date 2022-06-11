@@ -1,6 +1,6 @@
 {
   "name": "react-github-embed",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A React component for embedding GitHub repositories",
   "repository": {
     "type": "git",
