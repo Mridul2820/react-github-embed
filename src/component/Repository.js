@@ -27,7 +27,7 @@ const Repository = ({
     if (!data.repository.isPrivate && data.repository.isTemplate) {
       return "Public template";
     } else if (data.repository.isPrivate && data.repository.isTemplate) {
-      return "Pribate template";
+      return "Private template";
     } else if (data.repository.isPrivate) {
       return "Private";
     } else if (!data.repository.isPrivate) {
