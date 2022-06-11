@@ -2,6 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     screens: {
       us: "380px",
@@ -25,6 +26,7 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -58,9 +60,13 @@ module.exports = {
       silver: "#ecebff",
       bermuda: "#78dcca",
       "canvas-default": "#ffffff",
+      "canvas-dark": "#0d1117",
       "border-default": "#d0d7de",
-      "fg-muted": "#57606a",
-      "fg-accent": "#0969da",
+      "border-dark": "#30363d",
+      "muted-default": "#57606a",
+      "muted-dark": "#21262d",
+      "accent-default": "#0969da",
+      "accent-dark": "#58a6ff",
     },
     extend: {
       fontSize: {

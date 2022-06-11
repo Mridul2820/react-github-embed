@@ -37,7 +37,7 @@ const App = () => {
       <Repository
         username="Mridul2820"
         repository="next-template"
-        theme="light"
+        theme="dark"
       />
     </div>
   );

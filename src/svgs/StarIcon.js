@@ -8,7 +8,7 @@ const StarIcon = () => {
       viewBox="0 0 16 16"
       version="1.1"
       data-view-component="true"
-      className="w-4 h-4 fill-fg-muted"
+      className="w-4 h-4 fill-muted-default"
     >
       <path
         fillRule="evenodd"
