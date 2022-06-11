@@ -16,7 +16,7 @@ export const GET_REPOSITORY = gql`
       }
       name
       description
-      languages(orderBy: { field: SIZE, direction: ASC }, first: 1) {
+      languages(orderBy: { field: SIZE, direction: DESC }, first: 1) {
         nodes {
           color
           id

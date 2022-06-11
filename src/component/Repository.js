@@ -8,12 +8,12 @@ import ForkIcon from "../svgs/ForkIcon";
 const Repository = ({
   username,
   repository,
-  theme,
-  showStarCount,
-  showForkCount,
-  showLanguage,
-  showDescription,
-  showType,
+  theme = "light",
+  showStarCount = true,
+  showForkCount = true,
+  showLanguage = true,
+  showDescription = true,
+  showType = true,
 }) => {
   const { data, loading, error } = useQuery(GET_REPOSITORY, {
     variables: { username, repository },
@@ -27,7 +27,7 @@ const Repository = ({
   return (
     <div className="rounded-md p-4 max-w-xs w-full border-2 border-border-default bg-canvas-default">
       <div className="flex items-center gap-2">
-        <RepoIcon />
+        <RepoIcon theme={theme} />
         <a
           href={data.repository.url}
           target="_blank"
@@ -43,6 +43,17 @@ const Repository = ({
         </p>
       )}
       <p className="flex items-center gap-4 mt-2">
+        {showLanguage && data.repository.languages.nodes.length > 0 && (
+          <>
+            <span
+              className="h-3 w-3 rounded-full"
+              style={{ background: data.repository.languages.nodes[0].color }}
+            />
+            <span className="text-xs text-fg-muted leading-5 -ml-3">
+              {data.repository.languages.nodes[0].name}
+            </span>
+          </>
+        )}
         {showStarCount && (
           <a
             href={`${data.repository.url}/stargazers`}
@@ -50,7 +61,7 @@ const Repository = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <StarIcon />
+            <StarIcon theme={theme} />
             <span className="text-xs text-fg-muted leading-5">
               {data.repository.stargazers.totalCount}
             </span>
@@ -63,7 +74,7 @@ const Repository = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ForkIcon />
+            <ForkIcon theme={theme} />
             <span className="text-xs text-fg-mutedleading-5">
               {data.repository.forks.totalCount}
             </span>
