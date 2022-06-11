@@ -1,6 +1,6 @@
 {
   "name": "react-github-embed",
-  "version": "1.1.6",
+  "version": "1.1.9",
   "description": "A React component for embedding GitHub repositories",
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist babel src --out-dir dist --copy-files",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test"
   },
   "eslintConfig": {
