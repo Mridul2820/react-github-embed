@@ -27,8 +27,38 @@ cd git-o-get
 git checkout -b <YOUR_BRANCH_NAME>
 ```
 
-6. [Run it Locally](https://github.com/Mridul2820/react-github-embed#run-locally-)
-7. Add yor changes
+6. Run it Locally
+
+- Clone the respository locally
+
+```
+git clone https://github.com/Mridul2820/react-github-embed.git
+```
+
+- Create a `.env` file in the root directory
+
+```
+GITHUB_TOKEN = <YOUR_GITHUB_TOKEN>
+```
+
+- **`GITHUB_TOKEN`: Get your `Personal Access Token` by signing in to your github account and then go to your setting -> developer setting -> Personal access tokens -> Generate new token**
+
+- Install the `node_modules`
+
+```
+npm install 
+or 
+npm i
+```
+
+- Start the Server
+
+```
+npm start
+```
+
+
+7. Add your changes
 
 ```
 git add .
