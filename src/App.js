@@ -34,6 +34,11 @@ const App = () => {
         showDescription={true}
         showType={true}
       />
+      <Repository
+        username="Mridul2820"
+        repository="next-template"
+        theme="light"
+      />
     </div>
   );
 };

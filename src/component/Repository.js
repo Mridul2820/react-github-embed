@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import RepoIcon from "../svgs/RepoIcon";
 import StarIcon from "../svgs/StarIcon";
 import ForkIcon from "../svgs/ForkIcon";
+import { numberFormatter } from "../helper/formatNumber";
 
 const Repository = ({
   username,
@@ -23,25 +24,42 @@ const Repository = ({
   if (error) return <pre>{error.message}</pre>;
 
   console.log(data);
+  const getType = () => {
+    if (!data.repository.isPrivate && data.repository.isTemplate) {
+      return "Public Template";
+    } else if (!data.repository.isPrivate) {
+      return "Public";
+    } else if (data.repository.isFork) {
+      return "Forked";
+    } else {
+      return "Private";
+    }
+  };
 
   return (
-    <div className="rounded-md p-4 max-w-xs w-full border-2 border-border-default bg-canvas-default">
-      <div className="flex items-center gap-2">
-        <RepoIcon theme={theme} />
-        <a
-          href={data.repository.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-fg-accent hover:underline text-sm font-semibold"
-        >
-          <p className="leading-5">{data.repository.name}</p>
-        </a>
+    <div className="rounded-md p-4 max-w-xs w-full border-[1px] border-border-default bg-canvas-default flex justify-between flex-col">
+      <div>
+        <div className="flex items-center gap-2">
+          <RepoIcon theme={theme} />
+          <a
+            href={data.repository.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fg-accent hover:underline text-sm font-semibold"
+            title={data.repository.url}
+          >
+            <p className="leading-5">{data.repository.name}</p>
+          </a>
+          <span className="px-2 py-0.5 border-[1px] border-border-default text-xs text-fg-muted rounded-full font-medium">
+            {getType()}
+          </span>
+        </div>
+        {showDescription && (
+          <p className="text-xs text-fg-muted mt-2 leading-5">
+            {data.repository.description}
+          </p>
+        )}
       </div>
-      {showDescription && (
-        <p className="text-xs text-fg-muted mt-2 leading-5">
-          {data.repository.description}
-        </p>
-      )}
       <p className="flex items-center gap-4 mt-2">
         {showLanguage && data.repository.languages.nodes.length > 0 && (
           <>
@@ -63,7 +81,7 @@ const Repository = ({
           >
             <StarIcon theme={theme} />
             <span className="text-xs text-fg-muted leading-5">
-              {data.repository.stargazers.totalCount}
+              {numberFormatter(data.repository.stargazers.totalCount, 1)}
             </span>
           </a>
         )}
@@ -76,7 +94,7 @@ const Repository = ({
           >
             <ForkIcon theme={theme} />
             <span className="text-xs text-fg-mutedleading-5">
-              {data.repository.forks.totalCount}
+              {numberFormatter(data.repository.forks.totalCount, 1)}
             </span>
           </a>
         )}
