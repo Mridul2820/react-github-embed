@@ -1,5 +1,5 @@
 import React from "react";
-import Repository from "./component/Repository";
+import Repository from "./Repository";
 
 const App = () => {
   return (

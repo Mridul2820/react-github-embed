@@ -21,7 +21,7 @@
   ],
   "author": "Mridul2820",
   "license": "MIT",
-  "source": "src/index.js",
+  "source": "src/Repository.js",
   "dependencies": {
     "@apollo/client": "^3.6.7",
     "react": "^18.1.0",
@@ -48,5 +48,17 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
