@@ -5,7 +5,6 @@ import RepoIcon from "../svgs/RepoIcon";
 import StarIcon from "../svgs/StarIcon";
 import ForkIcon from "../svgs/ForkIcon";
 import { numberFormatter } from "../helper/formatNumber";
-import Loading from "./Loading";
 
 const Repository = ({
   username,
@@ -21,8 +20,8 @@ const Repository = ({
     variables: { username, repository },
   });
 
-  if (loading) return <Loading />;
-  if (error) return <Loading />;
+  if (loading) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
+  if (error) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
