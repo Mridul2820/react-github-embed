@@ -4,7 +4,16 @@ import Repository from "./component/Repository";
 const App = () => {
   return (
     <div>
-      <Repository username="facebook" repository="react" />
+      <Repository
+        username="facebook"
+        repository="react"
+        theme="light"
+        showStarCount={true}
+        showForkCount={true}
+        showLanguage={true}
+        showDescription={true}
+        showType={true}
+      />
     </div>
   );
 };

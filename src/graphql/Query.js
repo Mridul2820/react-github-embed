@@ -6,6 +6,8 @@ export const GET_REPOSITORY = gql`
       isPrivate
       isFork
       isTemplate
+      isArchived
+      url
       forks {
         totalCount
       }
@@ -14,6 +16,13 @@ export const GET_REPOSITORY = gql`
       }
       name
       description
+      languages(orderBy: { field: SIZE, direction: ASC }, first: 1) {
+        nodes {
+          color
+          id
+          name
+        }
+      }
     }
   }
 `;
