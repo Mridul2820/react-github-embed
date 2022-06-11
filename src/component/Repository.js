@@ -23,16 +23,17 @@ const Repository = ({
   if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
 
-  console.log(data);
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
-      return "Public Template";
+      return "Public template";
+    } else if (data.repository.isPrivate && data.repository.isTemplate) {
+      return "Pribate template";
+    } else if (data.repository.isPrivate) {
+      return "Private";
     } else if (!data.repository.isPrivate) {
       return "Public";
     } else if (data.repository.isFork) {
       return "Forked";
-    } else {
-      return "Private";
     }
   };
 
