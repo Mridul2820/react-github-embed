@@ -1,13 +1,36 @@
 {
-  "name": "react-github-embade",
+  "name": "react-github-embed",
   "version": "0.1.0",
-  "private": true,
+  "description": "A React component for embedding GitHub repositories",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mridul2820/react-github-embed"
+  },
+  "keywords": [
+    "React Github Embed",
+    "React Github Embed Component",
+    "Github Embed",
+    "Github Embed Component",
+    "Github Embed React",
+    "Github Embed React Component",
+    "Github React Component",
+    "Github Embed Component"
+  ],
+  "author": "Mridul2820",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mridul2820/react-github-embed/issues"
+  },
+  "homepage": "https://github.com/Mridul2820/react-github-embed#readme",
   "dependencies": {
+    "@apollo/client": "^3.6.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
