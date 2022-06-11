@@ -38,8 +38,8 @@ const Repository = ({
   };
 
   return (
-    <React.Fragment className={theme === "dark" && "dark"}>
-      <div className="rounded-md p-4 max-w-xs w-full border-[1px] border-border-default bg-canvas-default flex justify-between flex-col ">
+    <div className={theme === "dark" ? "dark" : "light"}>
+      <div className="flex justify-between flex-col rounded-md p-4 max-w-xs w-full border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark">
         <div>
           <div className="flex items-center gap-2">
             <RepoIcon theme={theme} />
@@ -47,17 +47,17 @@ const Repository = ({
               href={data.repository.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent-default hover:underline text-sm font-semibold"
+              className="text-accent-default dark:text-accent-dark hover:underline text-sm font-semibold"
               title={data.repository.url}
             >
               <p className="leading-5">{data.repository.name}</p>
             </a>
-            <span className="px-2 py-0.5 border-[1px] border-border-default text-xs text-muted-default rounded-full font-medium">
+            <span className="px-2 py-0.5 border-[1px] border-border-default dark:border-border-dark text-xs text-muted-default dark:text-muted-dark rounded-full font-medium">
               {getType()}
             </span>
           </div>
           {showDescription && (
-            <p className="text-xs text-muted-default mt-2 leading-5">
+            <p className="text-xs text-muted-default dark:text-muted-dark mt-2 leading-5">
               {data.repository.description}
             </p>
           )}
@@ -69,7 +69,7 @@ const Repository = ({
                 className="h-3 w-3 rounded-full"
                 style={{ background: data.repository.languages.nodes[0].color }}
               />
-              <span className="text-xs text-muted-default leading-5 -ml-3">
+              <span className="text-xs text-muted-default dark:text-muted-dark leading-5 -ml-3">
                 {data.repository.languages.nodes[0].name}
               </span>
             </>
@@ -82,7 +82,7 @@ const Repository = ({
               rel="noopener noreferrer"
             >
               <StarIcon theme={theme} />
-              <span className="text-xs text-muted-default leading-5">
+              <span className="text-xs text-muted-default dark:text-muted-dark leading-5">
                 {numberFormatter(data.repository.stargazers.totalCount, 1)}
               </span>
             </a>
@@ -95,14 +95,14 @@ const Repository = ({
               rel="noopener noreferrer"
             >
               <ForkIcon theme={theme} />
-              <span className="text-xs text-muted-defaultleading-5">
+              <span className="text-xs text-muted-default dark:text-muted-dark leading-5">
                 {numberFormatter(data.repository.forks.totalCount, 1)}
               </span>
             </a>
           )}
         </p>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

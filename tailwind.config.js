@@ -64,7 +64,7 @@ module.exports = {
       "border-default": "#d0d7de",
       "border-dark": "#30363d",
       "muted-default": "#57606a",
-      "muted-dark": "#21262d",
+      "muted-dark": "#8b949e",
       "accent-default": "#0969da",
       "accent-dark": "#58a6ff",
     },

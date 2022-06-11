@@ -10,7 +10,7 @@ const RepoIcon = () => {
       viewBox="0 0 16 16"
       version="1.1"
       data-view-component="true"
-      className="w-4 h-4 fill-muted-default"
+      className="w-4 h-4 fill-muted-default dark:fill-muted-dark"
     >
       <path
         fillRule="evenodd"
