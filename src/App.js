@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = () => {
-  return <div>APP</div>;
+  return <div>RIVU IS GOOD BOY</div>;
 };
 
 export default App;
