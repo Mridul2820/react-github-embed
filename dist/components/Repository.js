@@ -1,11 +1,11 @@
 import React from "react";
-import { GET_REPOSITORY } from "./graphql/Query";
+import { GET_REPOSITORY } from "../graphql/Query";
 import { useQuery } from "@apollo/client";
-import RepoIcon from "./svgs/RepoIcon";
-import StarIcon from "./svgs/StarIcon";
-import ForkIcon from "./svgs/ForkIcon";
-import { numberFormatter } from "./helper/formatNumber";
-import Loading from "./components/Loading";
+import RepoIcon from "../svgs/RepoIcon";
+import StarIcon from "../svgs/StarIcon";
+import ForkIcon from "../svgs/ForkIcon";
+import { numberFormatter } from "../helper/formatNumber";
+import Loading from "./Loading";
 
 const Repository = ({
   username,

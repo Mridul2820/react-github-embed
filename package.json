@@ -1,6 +1,6 @@
 {
   "name": "react-github-embed",
-  "version": "1.1.0",
+  "version": "1.1.6",
   "description": "A React component for embedding GitHub repositories",
   "repository": {
     "type": "git",
@@ -21,37 +21,38 @@
   ],
   "author": "Mridul2820",
   "license": "MIT",
-  "main": "src/Repository.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "@apollo/client": "^3.6.7",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
+    "@babel/polyfill": "^7.12.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-jsx": "^7.17.12",
-    "@babel/preset-react": "^7.17.12",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
     "tailwindcss": "^3.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "rm -rf dist babel src --out-dir dist --copy-files",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/plugin-syntax-jsx",
-      "@babel/preset-react"
     ]
   },
   "browserslist": {
