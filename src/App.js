@@ -32,6 +32,46 @@ const App = () => {
                 Copy
               </span>
             </div>
+            {/* <pre>
+              <span className="pl-c1">&lt;</span>
+              <span className="pl-ent">Repository</span>
+              <span className="pl-c1">username</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-s">"facebook"</span>
+              <span className="pl-c1">repository</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-s">"react"</span>
+              <span className="pl-c1">theme</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-s">"light"</span>
+              <span className="pl-c1">showStarCount</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-kos">{'{'}</span>
+              <span className="pl-c1">true</span>
+              <span className="pl-kos">{'}'}</span>
+              <span className="pl-c1">showForkCount</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-kos">{'{'}</span>
+              <span className="pl-c1">true</span>
+              <span className="pl-kos">{'}'}</span>
+              <span className="pl-c1">showLanguage</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-kos">{'{'}</span>
+              <span className="pl-c1">true</span>
+              <span className="pl-kos">{'}'}</span>
+              <span className="pl-c1">showDescription</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-kos">{'{'}</span>
+              <span className="pl-c1">true</span>
+              <span className="pl-kos">{'}'}</span>
+              <span className="pl-c1">showType</span>
+              <span className="pl-c1">=</span>
+              <span className="pl-kos">{'{'}</span>
+              <span className="pl-c1">true</span>
+              <span className="pl-kos">{'}'}</span>
+              <span className="pl-c1">/</span>
+              <span className="pl-c1">&gt;</span>
+            </pre> */}
             {`
             <Repository
               username="${username}"
@@ -47,7 +87,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 select-none">
         <h1 className="font-bold text-lg">React Github Embade Playground</h1>
         <div className="input-row">
           <label className="text-gray-600">Username</label>
