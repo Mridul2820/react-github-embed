@@ -1,29 +1,11 @@
 {
   "name": "react-github-embed",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "description": "A React component for embedding GitHub repositories",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mridul2820/react-github-embed"
-  },
-  "bugs": {
-    "url": "https://github.com/Mridul2820/react-github-embed/issues"
-  },
-  "keywords": [
-    "React Github Embed",
-    "React Github Embed Component",
-    "Github Embed",
-    "Github Embed Component",
-    "Github Embed React",
-    "Github Embed React Component",
-    "Github React Component",
-    "Github Embed Component"
-  ],
   "author": "Mridul2820",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -46,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "build": "rm -rf dist && SET NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test"
   },
   "eslintConfig": {
@@ -66,5 +48,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mridul2820/react-github-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/Mridul2820/react-github-embed/issues"
+  },
+  "keywords": [
+    "React Github Embed",
+    "React Github Embed Component",
+    "Github Embed",
+    "Github Embed Component",
+    "Github Embed React",
+    "Github Embed React Component",
+    "Github React Component",
+    "Github Embed Component"
+  ]
 }

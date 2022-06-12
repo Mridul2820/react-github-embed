@@ -20,8 +20,8 @@ const Repository = ({
     variables: { username, repository },
   });
 
-  if (loading) return "Loading..";
-  if (error) return "Error";
+  if (loading) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
+  if (error) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
