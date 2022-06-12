@@ -25,7 +25,26 @@ const App = () => {
           showType={showType}
         />
         <div className="">
-          <h2>Code</h2>
+          <h2 className="font-semibold">Code</h2>
+          <div className="bg-gray-100 p-5 w-80 relative">
+            <div className="absolute top-3 right-3">
+              <span className="px-2 py-0.5 border-[1px] border-border-default text-xs text-muted-default rounded-full font-medium cursor-pointer select-none">
+                Copy
+              </span>
+            </div>
+            {`
+            <Repository
+              username="${username}"
+              repository="${repository}"
+              theme="${theme}"
+              showStarCount={${showStarCount}}
+              showForkCount={${showForksCount}}
+              showLanguage={${showLanguage}}
+              showDescription={${showDescription}}
+              showType={${showType}}
+            />
+          `}
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-5">
