@@ -46,8 +46,8 @@ REACT_APP_GITHUB_TOKEN = <YOUR_GITHUB_TOKEN>
 - Install the `node_modules`
 
 ```
-npm install 
-or 
+npm install
+or
 npm i
 ```
 
@@ -56,7 +56,6 @@ npm i
 ```
 npm start
 ```
-
 
 7. Add your changes
 

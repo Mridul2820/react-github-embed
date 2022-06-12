@@ -9,6 +9,8 @@ require("core-js/modules/es.symbol.description.js");
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _client = require("@apollo/client");
 
 var _RepoIcon = _interopRequireDefault(require("../svgs/RepoIcon"));
@@ -53,20 +55,20 @@ const RepositoryCard = _ref => {
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
-      return "Public template";
+      return 'Public template';
     } else if (data.repository.isPrivate && data.repository.isTemplate) {
-      return "Private template";
+      return 'Private template';
     } else if (data.repository.isPrivate) {
-      return "Private";
+      return 'Private';
     } else if (!data.repository.isPrivate) {
-      return "Public";
+      return 'Public';
     } else if (data.repository.isFork) {
-      return "Forked";
+      return 'Forked';
     }
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: theme === "dark" ? "dark" : "light"
+    className: theme === 'dark' ? 'dark' : 'light'
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-between flex-col rounded-md p-4 w-80 h-44 border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
@@ -115,5 +117,15 @@ const RepositoryCard = _ref => {
   }, (0, _formatNumber.numberFormatter)(data.repository.forks.totalCount, 1))))));
 };
 
+RepositoryCard.propTypes = {
+  username: _propTypes.default.string.isRequired,
+  repository: _propTypes.default.string.isRequired,
+  theme: _propTypes.default.string,
+  showStarCount: _propTypes.default.bool,
+  showForkCount: _propTypes.default.bool,
+  showLanguage: _propTypes.default.bool,
+  showDescription: _propTypes.default.bool,
+  showType: _propTypes.default.bool
+};
 var _default = RepositoryCard;
 exports.default = _default;
