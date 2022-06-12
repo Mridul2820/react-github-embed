@@ -21,9 +21,14 @@ npm i react-github-embed
 ```
 
 ## Example
+Get your `Personal Access Token` by signing in to your github account and then go to your **setting -> developer setting -> Personal access tokens -> Generate new token**. Add it to `.env` file in the root directory.
+```
+REACT_APP_GITHUB_TOKEN = <YOUR_GITHUB_TOKEN>
+```
+
 ```jsx
 import React from "react";
-import Repository from "react-github-embed";
+import { Repository } from "react-github-embed";
 
 const App = () => {
   return (
@@ -42,11 +47,6 @@ const App = () => {
         username="Mridul2820"
         repository="css-js"
         theme="light"
-        showStarCount={true}
-        showForkCount={true}
-        showLanguage={true}
-        showDescription={true}
-        showType={true}
       />
       <Repository
         username="Mridul2820"
@@ -81,8 +81,11 @@ export default App;
 | Safari  | Yes    |
 | IE 11   | Yes    |
 
+<br/>
+
 Pull requests are welcome!
 <br/>
+
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## License
