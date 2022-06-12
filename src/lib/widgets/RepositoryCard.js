@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useQuery } from '@apollo/client';
 
 import RepoIcon from '../svgs/RepoIcon';
@@ -110,6 +111,17 @@ const RepositoryCard = ({
       </div>
     </div>
   );
+};
+
+RepositoryCard.propTypes = {
+  username: PropTypes.string.isRequired,
+  repository: PropTypes.string.isRequired,
+  theme: PropTypes.string,
+  showStarCount: PropTypes.bool,
+  showForkCount: PropTypes.bool,
+  showLanguage: PropTypes.bool,
+  showDescription: PropTypes.bool,
+  showType: PropTypes.bool,
 };
 
 export default RepositoryCard;
