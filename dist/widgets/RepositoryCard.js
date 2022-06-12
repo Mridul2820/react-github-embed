@@ -9,6 +9,8 @@ require("core-js/modules/es.symbol.description.js");
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _client = require("@apollo/client");
 
 var _RepoIcon = _interopRequireDefault(require("../svgs/RepoIcon"));
@@ -115,5 +117,15 @@ const RepositoryCard = _ref => {
   }, (0, _formatNumber.numberFormatter)(data.repository.forks.totalCount, 1))))));
 };
 
+RepositoryCard.propTypes = {
+  username: _propTypes.default.string.isRequired,
+  repository: _propTypes.default.string.isRequired,
+  theme: _propTypes.default.string,
+  showStarCount: _propTypes.default.bool,
+  showForkCount: _propTypes.default.bool,
+  showLanguage: _propTypes.default.bool,
+  showDescription: _propTypes.default.bool,
+  showType: _propTypes.default.bool
+};
 var _default = RepositoryCard;
 exports.default = _default;

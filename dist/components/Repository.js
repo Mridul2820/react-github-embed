@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _client = require("@apollo/client");
 
 var _client2 = require("../client");
@@ -40,5 +42,15 @@ const Repository = _ref => {
   }));
 };
 
+Repository.propTypes = {
+  username: _propTypes.default.string.isRequired,
+  repository: _propTypes.default.string.isRequired,
+  theme: _propTypes.default.string,
+  showStarCount: _propTypes.default.bool,
+  showForkCount: _propTypes.default.bool,
+  showLanguage: _propTypes.default.bool,
+  showDescription: _propTypes.default.bool,
+  showType: _propTypes.default.bool
+};
 var _default = Repository;
 exports.default = _default;
