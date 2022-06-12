@@ -18,11 +18,6 @@ const App = () => {
         username="Mridul2820"
         repository="cineparadis"
         theme="light"
-        showStarCount={true}
-        showForkCount={true}
-        showLanguage={true}
-        showDescription={true}
-        showType={true}
       />
       <Repository
         username="Mridul2820"

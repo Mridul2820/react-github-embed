@@ -14,6 +14,4 @@ var _Repository = _interopRequireDefault(require("./components/Repository"));
 
 require("./styles.css");
 
-require("./index.css");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
