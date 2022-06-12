@@ -1,12 +1,12 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
+import React from 'react';
+import { useQuery } from '@apollo/client';
 
-import RepoIcon from "../svgs/RepoIcon";
-import StarIcon from "../svgs/StarIcon";
-import ForkIcon from "../svgs/ForkIcon";
+import RepoIcon from '../svgs/RepoIcon';
+import StarIcon from '../svgs/StarIcon';
+import ForkIcon from '../svgs/ForkIcon';
 
-import { GET_REPOSITORY } from "../graphql/Query";
-import { numberFormatter } from "../helper/formatNumber";
+import { GET_REPOSITORY } from '../graphql/Query';
+import { numberFormatter } from '../helper/formatNumber';
 
 const RepositoryCard = ({
   username,
@@ -27,20 +27,20 @@ const RepositoryCard = ({
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
-      return "Public template";
+      return 'Public template';
     } else if (data.repository.isPrivate && data.repository.isTemplate) {
-      return "Private template";
+      return 'Private template';
     } else if (data.repository.isPrivate) {
-      return "Private";
+      return 'Private';
     } else if (!data.repository.isPrivate) {
-      return "Public";
+      return 'Public';
     } else if (data.repository.isFork) {
-      return "Forked";
+      return 'Forked';
     }
   };
 
   return (
-    <div className={theme === "dark" ? "dark" : "light"}>
+    <div className={theme === 'dark' ? 'dark' : 'light'}>
       <div className="flex justify-between flex-col rounded-md p-4 w-80 h-44 border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark">
         <div>
           <div className="flex items-center gap-2">

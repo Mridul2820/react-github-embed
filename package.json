@@ -20,7 +20,12 @@
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "autoprefixer": "^10.4.7",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
     "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -30,7 +35,11 @@
     "start": "react-scripts start",
     "build-css": "tailwindcss build src/index.css -o src/lib/styles.css",
     "build-babel": "babel src/lib --out-dir dist --copy-files",
-    "build": "npm run build-css && npm run build-babel"
+    "build-dist": "npm run build-css && npm run build-babel",
+    "build": "react-scripts build",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [

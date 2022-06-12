@@ -19,7 +19,7 @@ const Repository = _ref => {
   let {
     username,
     repository,
-    theme = "light",
+    theme = 'light',
     showStarCount = true,
     showForkCount = true,
     showLanguage = true,

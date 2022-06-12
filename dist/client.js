@@ -17,7 +17,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 // Create the http link
 const httpLink = (0, _client.createHttpLink)({
-  uri: "https://api.github.com/graphql"
+  uri: 'https://api.github.com/graphql'
 }); // Generate and set the header with the auth details
 
 const authLink = (0, _context.setContext)((_, _ref) => {

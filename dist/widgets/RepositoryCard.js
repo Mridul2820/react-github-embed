@@ -53,20 +53,20 @@ const RepositoryCard = _ref => {
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {
-      return "Public template";
+      return 'Public template';
     } else if (data.repository.isPrivate && data.repository.isTemplate) {
-      return "Private template";
+      return 'Private template';
     } else if (data.repository.isPrivate) {
-      return "Private";
+      return 'Private';
     } else if (!data.repository.isPrivate) {
-      return "Public";
+      return 'Public';
     } else if (data.repository.isFork) {
-      return "Forked";
+      return 'Forked';
     }
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: theme === "dark" ? "dark" : "light"
+    className: theme === 'dark' ? 'dark' : 'light'
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-between flex-col rounded-md p-4 w-80 h-44 border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
