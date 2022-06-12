@@ -29,9 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build-css": "tailwindcss build src/index.css -o src/lib/styles.css",
-    "remove-dist": "rd /s /q dist",
     "build-babel": "babel src/lib --out-dir dist --copy-files",
-    "build": "npm run build-css && remove-dist && npm run build-babel"
+    "build": "npm run build-css && npm run build-babel"
   },
   "eslintConfig": {
     "extends": [
