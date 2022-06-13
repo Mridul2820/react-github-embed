@@ -67,6 +67,8 @@ module.exports = {
       'muted-dark': '#8b949e',
       'accent-default': '#0969da',
       'accent-dark': '#58a6ff',
+      'syntax-constant': '#0550ae',
+      'syntax-string': '#0a3069',
     },
     typography: (theme) => ({
       default: {

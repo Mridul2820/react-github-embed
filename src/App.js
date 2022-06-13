@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col lg:flex-row-reverse justify-center gap-10 p-5">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-5">
         <Repository
           username={username}
           repository={repository}
@@ -24,7 +24,7 @@ const App = () => {
           showDescription={showDescription}
           showType={showType}
         />
-        <div className="">
+        <div>
           <h2 className="font-semibold">Code</h2>
           <div className="bg-gray-100 p-5 w-80 relative">
             <div className="absolute top-3 right-3">
@@ -32,58 +32,62 @@ const App = () => {
                 Copy
               </span>
             </div>
-            {/* <pre>
-              <span className="pl-c1">&lt;</span>
-              <span className="pl-ent">Repository</span>
-              <span className="pl-c1">username</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-s">"facebook"</span>
-              <span className="pl-c1">repository</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-s">"react"</span>
-              <span className="pl-c1">theme</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-s">"light"</span>
-              <span className="pl-c1">showStarCount</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-kos">{'{'}</span>
-              <span className="pl-c1">true</span>
-              <span className="pl-kos">{'}'}</span>
-              <span className="pl-c1">showForkCount</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-kos">{'{'}</span>
-              <span className="pl-c1">true</span>
-              <span className="pl-kos">{'}'}</span>
-              <span className="pl-c1">showLanguage</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-kos">{'{'}</span>
-              <span className="pl-c1">true</span>
-              <span className="pl-kos">{'}'}</span>
-              <span className="pl-c1">showDescription</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-kos">{'{'}</span>
-              <span className="pl-c1">true</span>
-              <span className="pl-kos">{'}'}</span>
-              <span className="pl-c1">showType</span>
-              <span className="pl-c1">=</span>
-              <span className="pl-kos">{'{'}</span>
-              <span className="pl-c1">true</span>
-              <span className="pl-kos">{'}'}</span>
+            <pre>
+              <span>&lt;</span>
+              <span>Repository</span>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">username</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`"${username}"`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">repository</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`"${repository}"`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">theme</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`"${theme}"`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">showStarCount</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`{`}</span>
+                <span className="text-syntax-constant">{`${showStarCount}`}</span>
+                <span className="text-syntax-string">{`}`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">showForksCount</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`{`}</span>
+                <span className="text-syntax-constant">{`${showForksCount}`}</span>
+                <span className="text-syntax-string">{`}`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">showLanguage</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`{`}</span>
+                <span className="text-syntax-constant">{`${showLanguage}`}</span>
+                <span className="text-syntax-string">{`}`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">showDescription</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`{`}</span>
+                <span className="text-syntax-constant">{`${showDescription}`}</span>
+                <span className="text-syntax-string">{`}`}</span>
+              </div>
+              <div className="block pl-6">
+                <span className="text-syntax-constant">showLanguage</span>
+                <span className="text-syntax-constant">=</span>
+                <span className="text-syntax-string">{`{`}</span>
+                <span className="text-syntax-constant">{`${showType}`}</span>
+                <span className="text-syntax-string">{`}`}</span>
+              </div>
               <span className="pl-c1">/</span>
               <span className="pl-c1">&gt;</span>
-            </pre> */}
-            {`
-            <Repository
-              username="${username}"
-              repository="${repository}"
-              theme="${theme}"
-              showStarCount={${showStarCount}}
-              showForkCount={${showForksCount}}
-              showLanguage={${showLanguage}}
-              showDescription={${showDescription}}
-              showType={${showType}}
-            />
-          `}
+            </pre>
           </div>
         </div>
       </div>
