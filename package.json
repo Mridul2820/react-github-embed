@@ -11,12 +11,12 @@
     "README.md"
   ],
   "dependencies": {
-    "@apollo/client": "^3.6.7",
     "@babel/polyfill": "^7.12.1",
-    "prop-types": "^15.8.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@apollo/client": "^3.6.7",
+    "prop-types": "^15.8.1",
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
     "react": "^18.1.0",
@@ -41,7 +42,9 @@
     "build": "react-scripts build",
     "lint": "eslint .",
     "lint-fix": "eslint --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +71,7 @@
   "bugs": {
     "url": "https://github.com/Mridul2820/react-github-embed/issues"
   },
+  "homepage": "https://react-github-embed.mridul.tech/",
   "keywords": [
     "React Github Embed",
     "React Github Embed Component",

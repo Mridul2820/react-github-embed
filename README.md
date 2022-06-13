@@ -20,6 +20,9 @@
 npm i react-github-embed
 ```
 
+## Demo & Playground
+[Demo & Playground](https://react-github-embed.mridul.tech/)
+
 ## Example
 
 Get your `Personal Access Token` by signing in to your github account and then go to your **setting -> developer setting -> Personal access tokens -> Generate new token**. Add it to `.env` file in the root directory.
@@ -88,5 +91,4 @@ Pull requests are welcome!
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## License
-
-MIT
+<a href="LICENSE">MIT</a>
