@@ -69,6 +69,7 @@ module.exports = {
       'accent-dark': '#58a6ff',
       'syntax-constant': '#0550ae',
       'syntax-string': '#0a3069',
+      'entity-tag': '#116329',
     },
     typography: (theme) => ({
       default: {

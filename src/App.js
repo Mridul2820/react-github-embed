@@ -11,8 +11,33 @@ const App = () => {
   const [showDescription, setShowDescription] = useState(true);
   const [showType, setShowType] = useState(true);
 
+  const [copyMsg, setCopyMsg] = useState('Copy');
+
+  setTimeout(() => {
+    setCopyMsg('Copy');
+  }, 10000);
+
+  const copyTextToClipboard = (copyMe) => {
+    //Chrome
+    if (navigator.clipboard != undefined) {
+      navigator.clipboard.writeText(copyMe).then(
+        function () {
+          setCopyMsg('Copied!');
+        },
+        function (err) {
+          console.error('Could not copy text: ', err);
+        }
+      );
+    }
+
+    // Internet Explorer
+    else if (window.clipboardData) {
+      window.clipboardData.setData('Text', copyMe);
+    }
+  };
+
   return (
-    <div className="flex flex-col lg:flex-row-reverse justify-center gap-10 p-5">
+    <div className="flex flex-col lg:flex-row-reverse justify-center gap-10 px-5 py-6 md:py-20">
       <div className="flex flex-col gap-5">
         <Repository
           username={username}
@@ -25,16 +50,30 @@ const App = () => {
           showType={showType}
         />
         <div>
-          <h2 className="font-semibold">Code</h2>
           <div className="bg-gray-100 p-5 w-80 relative">
             <div className="absolute top-3 right-3">
-              <span className="px-2 py-0.5 border-[1px] border-border-default text-xs text-muted-default rounded-full font-medium cursor-pointer select-none">
-                Copy
+              <span
+                className="px-2 py-0.5 border-[1px] border-border-default text-xs text-muted-default rounded-full font-medium cursor-pointer select-none"
+                onClick={() =>
+                  copyTextToClipboard(`
+                    <Repository
+                      username="${username}"
+                      repository="${repository}"
+                      theme="${theme}"
+                      showStarCount={${showStarCount}}
+                      showForkCount={${showForksCount}}
+                      showLanguage={${showLanguage}}
+                      showDescription={${showDescription}}
+                      showType={${showType}}
+                    />`)
+                }
+              >
+                {copyMsg}
               </span>
             </div>
             <pre>
-              <span>&lt;</span>
-              <span>Repository</span>
+              <span className="text-syntax-string">&lt;</span>
+              <span className="text-entity-tag">Repository</span>
               <div className="block pl-6">
                 <span className="text-syntax-constant">username</span>
                 <span className="text-syntax-constant">=</span>
@@ -85,8 +124,8 @@ const App = () => {
                 <span className="text-syntax-constant">{`${showType}`}</span>
                 <span className="text-syntax-string">{`}`}</span>
               </div>
-              <span className="pl-c1">/</span>
-              <span className="pl-c1">&gt;</span>
+              <span className="text-syntax-string">/</span>
+              <span className="text-syntax-string">&gt;</span>
             </pre>
           </div>
         </div>
