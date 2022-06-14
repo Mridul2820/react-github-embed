@@ -10,6 +10,10 @@
   .input {
     @apply border-2 border-gray-300 rounded-sm px-2 py-1 outline-none focus:border-gray-600;
   }
+
+  .star-fork {
+    @apply flex gap-1 py-1 px-1.5 items-center border-[1px] border-border-default dark:border-border-dark bg-canvas-default dark:bg-canvas-dark rounded-sm3 font-semibold text-sm leading-4 text-slate-900 dark:text-slate-100;
+  }
 }
 
 body {

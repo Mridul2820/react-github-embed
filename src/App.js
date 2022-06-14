@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Repository } from './lib';
+import { Repository, StarCount } from './lib';
 import { AiFillGithub } from 'react-icons/ai';
 import { ImNpm } from 'react-icons/im';
 
@@ -227,6 +227,9 @@ const App = () => {
             NPM
           </a>
         </div>
+
+        <StarCount username={username} repository={repository} theme={theme} />
+        <StarCount username="Mridul2820" repository="css-js" theme="light" />
       </div>
     </div>
   );

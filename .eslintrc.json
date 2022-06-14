@@ -18,6 +18,12 @@
   },
   "plugins": ["react"],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/react-in-jsx-scope": 0,
     "no-unused-vars": 1
   }

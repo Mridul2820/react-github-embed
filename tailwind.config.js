@@ -105,6 +105,9 @@ module.exports = {
       fontSize: {
         normal: '18px',
       },
+      borderRadius: {
+        sm3: '3px',
+      },
       boxShadow: {
         bs1: '0px 10px 36px 0px rgba(0, 0, 0, 0.16), 0px 0px 0px 1px rgba(0, 0, 0, 0.06)',
         bs2: 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px',
