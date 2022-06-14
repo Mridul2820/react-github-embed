@@ -6,7 +6,7 @@ const DocForkCount = () => {
   const [username, setUsername] = useState('facebook');
   const [repository, setRepository] = useState('react');
   const [theme, setTheme] = useState('light');
-  const [iconText, setIconText] = useState('Star');
+  const [iconText, setIconText] = useState('Fork');
   const [formatNumber, setFormatNumber] = useState(true);
 
   const [copyMsg, setCopyMsg] = useState('Copy');
