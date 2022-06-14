@@ -5,7 +5,14 @@ import PropTypes from 'prop-types';
 import GithubIcon from '../svgs/GithubIcon';
 import { numberFormatter } from '../helper/formatNumber';
 
-const StarForkCard = ({ data, theme, iconText, formatNumber, slug }) => {
+const StarForkCard = ({
+  data,
+  theme,
+  iconText,
+  formatNumber,
+  slug,
+  numbers,
+}) => {
   return (
     <div className={theme === 'dark' ? 'dark' : 'light'}>
       <div className="flex items-center gap-2">
@@ -32,9 +39,7 @@ const StarForkCard = ({ data, theme, iconText, formatNumber, slug }) => {
               color={theme === 'dark' ? '#0f172a' : '#e2e8f0'}
             />
           </span>
-          {formatNumber
-            ? numberFormatter(data.repository.stargazers.totalCount, 1)
-            : data.repository.stargazers.totalCount}
+          {formatNumber ? numberFormatter(numbers, 1) : numbers}
         </a>
       </div>
     </div>
@@ -47,6 +52,7 @@ StarForkCard.propTypes = {
   slug: PropTypes.string,
   iconText: PropTypes.string,
   formatNumber: PropTypes.bool,
+  numbers: PropTypes.number,
 };
 
 export default StarForkCard;

@@ -27,6 +27,7 @@ const StarCountCard = ({
       iconText={iconText}
       formatNumber={formatNumber}
       slug="/stargazers"
+      numbers={data.repository.stargazers.totalCount}
     />
   );
 };

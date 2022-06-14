@@ -27,6 +27,7 @@ const ForkCountCard = ({
       iconText={iconText}
       formatNumber={formatNumber}
       slug="/network/members"
+      numbers={data.repository.forks.totalCount}
     />
   );
 };
