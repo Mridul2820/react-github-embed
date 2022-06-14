@@ -1,8 +1,9 @@
 import React from 'react';
-import { ForkCount, Repository, StarCount } from './lib';
 import { AiFillGithub } from 'react-icons/ai';
 import { ImNpm } from 'react-icons/im';
 import DocRepository from './docs/DocRepository';
+import DocStarCount from './docs/DocStarCount';
+import DocForkCount from './docs/DocForkCount';
 
 const App = () => {
   return (
@@ -12,8 +13,9 @@ const App = () => {
       </h1>
 
       <DocRepository />
-      <StarCount username="Mridul2820" repository="css-js" theme="light" />
-      <ForkCount username="Mridul2820" repository="css-js" theme="light" />
+      <DocStarCount />
+      <DocForkCount />
+
       <div className="flex gap-5 items-center justify-center">
         <a
           href="https://github.com/Mridul2820/react-github-embed"

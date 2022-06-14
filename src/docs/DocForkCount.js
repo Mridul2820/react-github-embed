@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { Repository } from '../lib';
+import { ForkCount } from '../lib';
 import { copyTextToClipboard } from './helpers/copyTextToClipboard';
 
-const DocRepository = () => {
+const DocForkCount = () => {
   const [username, setUsername] = useState('facebook');
   const [repository, setRepository] = useState('react');
   const [theme, setTheme] = useState('light');
-  const [showStarCount, setShowStarCount] = useState(true);
-  const [showForksCount, setShowForksCount] = useState(true);
-  const [showLanguage, setShowLanguage] = useState(true);
-  const [showDescription, setShowDescription] = useState(true);
-  const [showType, setShowType] = useState(true);
+  const [iconText, setIconText] = useState('Star');
+  const [formatNumber, setFormatNumber] = useState(true);
 
   const [copyMsg, setCopyMsg] = useState('Copy');
 
@@ -19,21 +16,18 @@ const DocRepository = () => {
   }, 10000);
 
   return (
-    <div className="py-4 border-b-2 border-t-slate-500">
+    <div className="py-5 mb-5 border-b-2 border-t-slate-500">
       <h2 className="font-semibold text-normal md:text-lg lg:text-xl text-center mb-5">
-        {`<Repository />`}
+        {`<ForkCount />`}
       </h2>
       <div className="flex flex-col lg:flex-row-reverse justify-center gap-10">
         <div className="flex flex-col gap-5">
-          <Repository
+          <ForkCount
             username={username}
             repository={repository}
             theme={theme}
-            showStarCount={showStarCount}
-            showForkCount={showForksCount}
-            showLanguage={showLanguage}
-            showDescription={showDescription}
-            showType={showType}
+            iconText={iconText}
+            formatNumber={formatNumber}
           />
           <div>
             <div className="bg-gray-100 p-5 w-80 relative">
@@ -43,15 +37,12 @@ const DocRepository = () => {
                   onClick={() =>
                     copyTextToClipboard(
                       `
-                    <Repository
+                    <ForkCount
                       username="${username}"
                       repository="${repository}"
                       theme="${theme}"
-                      showStarCount={${showStarCount}}
-                      showForkCount={${showForksCount}}
-                      showLanguage={${showLanguage}}
-                      showDescription={${showDescription}}
-                      showType={${showType}}
+                      iconText="${iconText}"
+                      formatNumber={${formatNumber}}
                     />`,
                       setCopyMsg
                     )
@@ -62,7 +53,7 @@ const DocRepository = () => {
               </div>
               <pre>
                 <span className="text-syntax-string">&lt;</span>
-                <span className="text-entity-tag">Repository</span>
+                <span className="text-entity-tag">ForkCount</span>
                 <div className="block pl-6">
                   <span className="text-syntax-constant">username</span>
                   <span className="text-syntax-constant">=</span>
@@ -79,40 +70,19 @@ const DocRepository = () => {
                   <span className="text-syntax-string">{`"${theme}"`}</span>
                 </div>
                 <div className="block pl-6">
-                  <span className="text-syntax-constant">showStarCount</span>
+                  <span className="text-syntax-constant">iconText</span>
                   <span className="text-syntax-constant">=</span>
-                  <span className="text-syntax-string">{`{`}</span>
-                  <span className="text-syntax-constant">{`${showStarCount}`}</span>
-                  <span className="text-syntax-string">{`}`}</span>
+                  <span className="text-syntax-string">{`"${iconText}"`}</span>
                 </div>
+
                 <div className="block pl-6">
-                  <span className="text-syntax-constant">showForksCount</span>
+                  <span className="text-syntax-constant">formatNumber</span>
                   <span className="text-syntax-constant">=</span>
                   <span className="text-syntax-string">{`{`}</span>
-                  <span className="text-syntax-constant">{`${showForksCount}`}</span>
+                  <span className="text-syntax-constant">{`${formatNumber}`}</span>
                   <span className="text-syntax-string">{`}`}</span>
                 </div>
-                <div className="block pl-6">
-                  <span className="text-syntax-constant">showLanguage</span>
-                  <span className="text-syntax-constant">=</span>
-                  <span className="text-syntax-string">{`{`}</span>
-                  <span className="text-syntax-constant">{`${showLanguage}`}</span>
-                  <span className="text-syntax-string">{`}`}</span>
-                </div>
-                <div className="block pl-6">
-                  <span className="text-syntax-constant">showDescription</span>
-                  <span className="text-syntax-constant">=</span>
-                  <span className="text-syntax-string">{`{`}</span>
-                  <span className="text-syntax-constant">{`${showDescription}`}</span>
-                  <span className="text-syntax-string">{`}`}</span>
-                </div>
-                <div className="block pl-6">
-                  <span className="text-syntax-constant">showLanguage</span>
-                  <span className="text-syntax-constant">=</span>
-                  <span className="text-syntax-string">{`{`}</span>
-                  <span className="text-syntax-constant">{`${showType}`}</span>
-                  <span className="text-syntax-string">{`}`}</span>
-                </div>
+
                 <span className="text-syntax-string">/</span>
                 <span className="text-syntax-string">&gt;</span>
               </pre>
@@ -148,48 +118,20 @@ const DocRepository = () => {
             </select>
           </div>
           <div className="input-row">
-            <label className="text-gray-600">Show Star Count</label>
+            <label className="text-gray-600">Icon Text</label>
             <input
               className="input"
-              type="checkbox"
-              checked={showStarCount}
-              onChange={() => setShowStarCount(!showStarCount)}
+              value={iconText}
+              onChange={(e) => setIconText(e.target.value)}
             />
           </div>
           <div className="input-row">
-            <label className="text-gray-600">Show Fork Count</label>
+            <label className="text-gray-600">Format Number</label>
             <input
               className="input"
               type="checkbox"
-              checked={showForksCount}
-              onChange={() => setShowForksCount(!showForksCount)}
-            />
-          </div>
-          <div className="input-row">
-            <label className="text-gray-600">Show Language</label>
-            <input
-              className="input"
-              type="checkbox"
-              checked={showLanguage}
-              onChange={() => setShowLanguage(!showLanguage)}
-            />
-          </div>
-          <div className="input-row">
-            <label className="text-gray-600">Show Description</label>
-            <input
-              className="input"
-              type="checkbox"
-              checked={showDescription}
-              onChange={() => setShowDescription(!showDescription)}
-            />
-          </div>
-          <div className="input-row">
-            <label className="text-gray-600">Show Type</label>
-            <input
-              className="input"
-              type="checkbox"
-              checked={showType}
-              onChange={() => setShowType(!showType)}
+              checked={formatNumber}
+              onChange={() => setFormatNumber(!formatNumber)}
             />
           </div>
         </div>
@@ -198,4 +140,4 @@ const DocRepository = () => {
   );
 };
 
-export default DocRepository;
+export default DocForkCount;
