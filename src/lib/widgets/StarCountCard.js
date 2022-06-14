@@ -31,7 +31,7 @@ const StarCountCard = ({
           href={data.repository.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="star-fork bg-slate-100 hover:bg-slate-200 duration-300"
+          className="star-fork bg-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800  duration-300"
           title={repository}
         >
           <GithubIcon />
@@ -41,7 +41,7 @@ const StarCountCard = ({
           href={`${data.repository.url}/stargazers`}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative star-fork bg-neutral-50 hover:bg-neutral-100 duration-300"
+          className="relative star-fork bg-neutral-50 hover:bg-neutral-100 dark:hover:bg-slate-800 duration-300"
           title={`${repository} stargazers`}
         >
           <span className="absolute top-1/2 -translate-y-1/2 -left-3 z-10">
