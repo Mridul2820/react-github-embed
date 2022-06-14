@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '../graphql/Query';
 import StarForkCard from './StarForkCard';
 
-const StarCountCard = ({
+const ForkCountCard = ({
   username,
   repository,
   theme,
@@ -27,12 +27,12 @@ const StarCountCard = ({
       theme={theme}
       iconText={iconText}
       formatNumber={formatNumber}
-      slug="/stargazers"
+      slug="/network/members"
     />
   );
 };
 
-StarCountCard.propTypes = {
+ForkCountCard.propTypes = {
   username: PropTypes.string.isRequired,
   repository: PropTypes.string.isRequired,
   theme: PropTypes.string,
@@ -40,4 +40,4 @@ StarCountCard.propTypes = {
   formatNumber: PropTypes.bool,
 };
 
-export default StarCountCard;
+export default ForkCountCard;

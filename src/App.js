@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Repository, StarCount } from './lib';
+import { ForkCount, Repository, StarCount } from './lib';
 import { AiFillGithub } from 'react-icons/ai';
 import { ImNpm } from 'react-icons/im';
 
@@ -230,6 +230,7 @@ const App = () => {
 
         <StarCount username={username} repository={repository} theme={theme} />
         <StarCount username="Mridul2820" repository="css-js" theme="light" />
+        <ForkCount username="Mridul2820" repository="css-js" theme="light" />
       </div>
     </div>
   );
