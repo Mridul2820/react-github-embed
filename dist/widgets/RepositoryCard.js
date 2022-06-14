@@ -23,6 +23,8 @@ var _Query = require("../graphql/Query");
 
 var _formatNumber = require("../helper/formatNumber");
 
+var _RepositoryLoading = _interopRequireDefault(require("../loading/RepositoryLoading"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const RepositoryCard = _ref => {
@@ -46,12 +48,8 @@ const RepositoryCard = _ref => {
       repository
     }
   });
-  if (loading) return /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-gray-200 w-80 h-44 rounded-md"
-  });
-  if (error) return /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-gray-200 w-80 h-44 rounded-md"
-  });
+  if (loading) return /*#__PURE__*/_react.default.createElement(_RepositoryLoading.default, null);
+  if (error) return /*#__PURE__*/_react.default.createElement(_RepositoryLoading.default, null);
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {

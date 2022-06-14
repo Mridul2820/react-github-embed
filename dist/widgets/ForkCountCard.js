@@ -15,6 +15,8 @@ var _Query = require("../graphql/Query");
 
 var _StarForkCard = _interopRequireDefault(require("./StarForkCard"));
 
+var _StarForkLoading = _interopRequireDefault(require("../loading/StarForkLoading"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ForkCountCard = _ref => {
@@ -35,18 +37,15 @@ const ForkCountCard = _ref => {
       repository
     }
   });
-  if (loading) return /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-gray-200 w-32 h-[26px] rounded-sm3"
-  });
-  if (error) return /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-gray-200 w-32 h-[26px] rounded-sm3"
-  });
+  if (loading) return /*#__PURE__*/_react.default.createElement(_StarForkLoading.default, null);
+  if (error) return /*#__PURE__*/_react.default.createElement(_StarForkLoading.default, null);
   return /*#__PURE__*/_react.default.createElement(_StarForkCard.default, {
     data: data,
     theme: theme,
     iconText: iconText,
     formatNumber: formatNumber,
-    slug: "/network/members"
+    slug: "/network/members",
+    numbers: data.repository.forks.totalCount
   });
 };
 

@@ -23,7 +23,8 @@ const StarForkCard = _ref => {
     theme,
     iconText,
     formatNumber,
-    slug
+    slug,
+    numbers
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: theme === 'dark' ? 'dark' : 'light'
@@ -46,7 +47,7 @@ const StarForkCard = _ref => {
   }, /*#__PURE__*/_react.default.createElement(_io.IoMdArrowDropleft, {
     size: 17,
     color: theme === 'dark' ? '#0f172a' : '#e2e8f0'
-  })), formatNumber ? (0, _formatNumber.numberFormatter)(data.repository.stargazers.totalCount, 1) : data.repository.stargazers.totalCount)));
+  })), formatNumber ? (0, _formatNumber.numberFormatter)(numbers, 1) : numbers)));
 };
 
 StarForkCard.propTypes = {
@@ -54,7 +55,8 @@ StarForkCard.propTypes = {
   theme: _propTypes.default.string,
   slug: _propTypes.default.string,
   iconText: _propTypes.default.string,
-  formatNumber: _propTypes.default.bool
+  formatNumber: _propTypes.default.bool,
+  numbers: _propTypes.default.number
 };
 var _default = StarForkCard;
 exports.default = _default;
