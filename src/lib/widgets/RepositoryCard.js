@@ -8,6 +8,7 @@ import ForkIcon from '../svgs/ForkIcon';
 
 import { GET_REPOSITORY } from '../graphql/Query';
 import { numberFormatter } from '../helper/formatNumber';
+import RepositoryLoading from '../loading/RepositoryLoading';
 
 const RepositoryCard = ({
   username,
@@ -23,8 +24,8 @@ const RepositoryCard = ({
     variables: { username, repository },
   });
 
-  if (loading) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
-  if (error) return <div className="bg-gray-200 w-80 h-44 rounded-md"></div>;
+  if (loading) return <RepositoryLoading />;
+  if (error) return <RepositoryLoading />;
 
   const getType = () => {
     if (!data.repository.isPrivate && data.repository.isTemplate) {

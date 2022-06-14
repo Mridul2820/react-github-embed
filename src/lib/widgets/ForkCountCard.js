@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import { GET_REPOSITORY } from '../graphql/Query';
 import StarForkCard from './StarForkCard';
+import StarForkLoading from '../loading/StarForkLoading';
 
 const ForkCountCard = ({
   username,
@@ -16,10 +17,8 @@ const ForkCountCard = ({
     variables: { username, repository },
   });
 
-  if (loading)
-    return <div className="bg-gray-200 w-32 h-[26px] rounded-sm3"></div>;
-  if (error)
-    return <div className="bg-gray-200 w-32 h-[26px] rounded-sm3"></div>;
+  if (loading) return <StarForkLoading />;
+  if (error) return <StarForkLoading />;
 
   return (
     <StarForkCard
