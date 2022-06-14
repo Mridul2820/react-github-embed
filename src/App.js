@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Repository } from './lib';
+import { AiFillGithub } from 'react-icons/ai';
+import { ImNpm } from 'react-icons/im';
 
 const App = () => {
   const [username, setUsername] = useState('facebook');
@@ -203,6 +205,27 @@ const App = () => {
             checked={showType}
             onChange={() => setShowType(!showType)}
           />
+        </div>
+
+        <div className="flex gap-5 items-center">
+          <a
+            href="https://github.com/Mridul2820/react-github-embed"
+            className="flex items-center gap-1 font-medium hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillGithub />
+            GITHUB
+          </a>
+          <a
+            href="https://www.npmjs.com/package/react-github-embed"
+            className="flex items-center gap-1 font-medium hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ImNpm />
+            NPM
+          </a>
         </div>
       </div>
     </div>
