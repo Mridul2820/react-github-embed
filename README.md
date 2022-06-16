@@ -68,7 +68,7 @@ const RepositoryCard = () => {
 export default RepositoryCard;
 ```
 
-## Options
+### Options
 
 | Property                    |  Type  | Description                                                                                                                            |
 | :-------------------------- | :----: | :------------------------------------------------------------------------------------------------------------------------------------- |
@@ -102,6 +102,8 @@ const StarCountCard = () => {
 export default RepositoryCard;
 ```
 
+### Options
+
 | Property                    |  Type  | Description                                                               |
 | :-------------------------- | :----: | :------------------------------------------------------------------------ |
 | username<br/>_(required)_   | string | Username of the Github User                                               |
@@ -130,6 +132,8 @@ const ForkCountCard = () => {
 
 export default RepositoryCard;
 ```
+
+### Options
 
 | Property                    |  Type  | Description                                                               |
 | :-------------------------- | :----: | :------------------------------------------------------------------------ |
